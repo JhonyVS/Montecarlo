@@ -13,7 +13,7 @@ public class Montecarlo {
     public static void main(String[] args) {
         EbrioAleatorio ea = new EbrioAleatorio();
         Position pos = ea.salirDelBar(10);
-        System.out.println(ea.aDosCuadras());
+        System.out.print("El ebrio esta a dos cuadras? "+ea.aDosCuadras()+" ");
         System.out.println(ea);
     }
 }
