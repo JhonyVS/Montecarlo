@@ -25,8 +25,10 @@ public class EbrioAleatorio {
     
     private void salirDelBar(int intentos){
         Random r = new Random();
+        int cont = 1;
         int numAleatorio;
-        while(intentos > 1){
+        System.out.println("\nNro"+"\t"+ "NA"+"\t"+"SITUACION");
+        while(cont<=intentos){
             numAleatorio = r.nextInt(100);
             if(numAleatorio <25){
                 moverDerecha();
@@ -36,7 +38,8 @@ public class EbrioAleatorio {
                 moverArriba();
             }else
                 moverAbajo();
-            intentos--;
+            System.out.println(cont+"\t"+numAleatorio+"\t"+pos);
+            cont++;
         }
         
     }

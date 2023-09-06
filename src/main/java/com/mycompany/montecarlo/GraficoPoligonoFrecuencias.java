@@ -40,7 +40,7 @@ public class GraficoPoligonoFrecuencias extends JFrame {
             }
             //System.out.print("contsi:"+contSi +" cont:"+cont);
             valor = (int)(((double)contSi / (double)cont)*100);
-            System.out.print(valor+" ");
+            //System.out.print(valor+" ");
             dataset.addValue(valor, "Frecuencias", cont+"");
             cont++;
             ea.reestablecerPosicion();
