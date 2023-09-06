@@ -41,7 +41,7 @@ public class GraficoPoligonoFrecuencias extends JFrame {
             //System.out.print("contsi:"+contSi +" cont:"+cont);
             valor = (int)(((double)contSi / (double)cont)*100);
             System.out.print(valor+" ");
-            dataset.addValue(valor, "Frecuencias", valor+"");
+            dataset.addValue(valor, "Frecuencias", cont+"");
             cont++;
             ea.reestablecerPosicion();
         }
@@ -71,9 +71,10 @@ public class GraficoPoligonoFrecuencias extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            GraficoPoligonoFrecuencias demo = new GraficoPoligonoFrecuencias("Gráfico de Polígono de Frecuencias",100);
+            GraficoPoligonoFrecuencias demo = new GraficoPoligonoFrecuencias("Gráfico de Polígono de Frecuencias",50);
             demo.pack();
             demo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            demo.setLocationRelativeTo(null);
             demo.setVisible(true);
         });
     }
