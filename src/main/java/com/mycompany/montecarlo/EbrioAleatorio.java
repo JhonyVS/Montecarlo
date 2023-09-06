@@ -17,13 +17,13 @@ public class EbrioAleatorio {
         pos= new Position();
     }
     
-    
-    public boolean aDosCuadras(){
+    public boolean aDosCuadras(int numeroDeCalles){
+        salirDelBar(numeroDeCalles);
         int distancia = Math.abs(pos.getX())+Math.abs(pos.getY());
         return distancia<=2;
     }
     
-    public Position salirDelBar(int intentos){
+    private void salirDelBar(int intentos){
         Random r = new Random();
         int numAleatorio;
         while(intentos > 1){
@@ -39,7 +39,6 @@ public class EbrioAleatorio {
             intentos--;
         }
         
-        return pos;
     }
 
     @Override
@@ -58,5 +57,11 @@ public class EbrioAleatorio {
     }
     private void moverAbajo(){
         pos.setYDown();
+    }
+    public void reestablecerPosicion(){
+        pos.reestablecer();
+    }
+    public Position getPosicion(){
+        return pos;
     }
 }

@@ -48,5 +48,10 @@ class Position {
     public String toString() {
         return "Posicion:["+x+","+y+"]";
     }
+
+    public void reestablecer() {
+        x=0;
+        y=0;
+    }
     
 }
