@@ -65,7 +65,7 @@ public class GraficoPoligonoFrecuencias extends JFrame {
 
         // Agregar el gráfico a un panel
         ChartPanel chartPanel = new ChartPanel(chart);
-        chartPanel.setPreferredSize(new java.awt.Dimension(800, 600));
+        chartPanel.setPreferredSize(new java.awt.Dimension(1100, 600));
         setContentPane(chartPanel);
     }
 

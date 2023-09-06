@@ -28,11 +28,11 @@ public class EbrioAleatorio {
         int numAleatorio;
         while(intentos > 1){
             numAleatorio = r.nextInt(100);
-            if(numAleatorio <=25){
+            if(numAleatorio <25){
                 moverDerecha();
-            }else if(numAleatorio<=50){
+            }else if(numAleatorio<50){
                 moverIzquierda();
-            }else if(numAleatorio<=75){
+            }else if(numAleatorio<75){
                 moverArriba();
             }else
                 moverAbajo();
