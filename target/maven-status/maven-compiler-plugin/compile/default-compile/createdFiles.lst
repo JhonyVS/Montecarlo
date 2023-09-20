@@ -1,4 +1,6 @@
+com\mycompany\montecarlo\Cards.class
 com\mycompany\montecarlo\Position.class
 com\mycompany\montecarlo\EbrioAleatorio.class
+com\mycompany\montecarlo\GraficoPoligonoFrecuenciasCards.class
 com\mycompany\montecarlo\GraficoPoligonoFrecuencias.class
 com\mycompany\montecarlo\Montecarlo.class

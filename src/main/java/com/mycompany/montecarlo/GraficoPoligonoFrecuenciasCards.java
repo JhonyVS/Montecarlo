@@ -4,50 +4,43 @@
  */
 package com.mycompany.montecarlo;
 
-/**
- *
- * @author Jon
- */
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-import javax.swing.*;
 
-public class GraficoPoligonoFrecuencias extends JFrame {
+/**
+ *
+ * @author Jon
+ */
+public class GraficoPoligonoFrecuenciasCards extends JFrame{
+    private Cards cards;
 
-    private EbrioAleatorio ea;
-
-    public GraficoPoligonoFrecuencias(String titulo,int iteraciones) {
+    public GraficoPoligonoFrecuenciasCards(String titulo,int veces) {
         
         super(titulo);
-        ea = new EbrioAleatorio();
-
+        cards = new Cards();
+        int expo = 1;
         // Crear un conjunto de datos de frecuencias
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        int cont = 1;
-        int contSi=0;
         double valor;
-        while(cont <= iteraciones){
-            boolean estaADosCuadras = ea.aDosCuadras(10);
-            if(estaADosCuadras){
-                contSi++;
-            }
-            //System.out.print("contsi:"+contSi +" cont:"+cont);
-            valor = (((double)contSi / (double)cont)*100.00);
-            System.out.println(cont+" "+valor+" ");
-            dataset.addValue(valor, "Frecuencias", cont+"");
-            cont++;
-            ea.reestablecerPosicion();
+        System.out.println("N \t\t\t Probabilidad");
+        while(expo <= veces){
+            valor = cards.reyesJuntos((int)Math.pow(10, expo));
+            //System.out.print(valor+" ");
+            dataset.addValue(valor, "Frecuencias", (int)Math.pow(10, expo)+"");
+            expo++;
         }
 
 
         // Crear el gráfico de polígono de frecuencias
         JFreeChart chart = ChartFactory.createLineChart(
                 titulo,
-                "Resultados "+iteraciones,
+                "Resultados "+veces,
                 "Porcentajes",
                 dataset,
                 PlotOrientation.VERTICAL,
@@ -68,12 +61,11 @@ public class GraficoPoligonoFrecuencias extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            GraficoPoligonoFrecuencias demo = new GraficoPoligonoFrecuencias("Gráfico de Polígono de Frecuencias",500);
+            GraficoPoligonoFrecuenciasCards demo = new GraficoPoligonoFrecuenciasCards("Gráfico de Polígono de Frecuencias de Cartas ",6);
             demo.pack();
             demo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             demo.setLocationRelativeTo(null);
-            demo.setVisible(true); 
+            demo.setVisible(true);
         });
     }
 }
-
